@@ -1,6 +1,6 @@
 //Server Instantiate
 const express = require('express')
-const app =express();
+const app = express();
 
 //used to parse req.body in express -> PUT or POST
 const bodyparser=require('body-parser');
@@ -11,7 +11,7 @@ app.use(bodyparser.json());
 
 //Activate the server on 3000 port
 app.listen(8000,()=>{
-console.log("Server Started at port no. 9000")
+console.log("Server Started at port no. 3000")
 });
 
 //Routes
@@ -25,9 +25,12 @@ app.post('/api/cars',(request,response)=>{
     response.send("Car Submitted Succesfully.")
 
 })
+mongoose.set('strictQuery',true);
 mongoose.connect('mongodb://localhost:27017/myDatabase',{
     useNewUrlParser:true,
-    useUnifiedTopology:true
+    useUnifiedTopology:true,family:4
 })
 .then(()=>{console.log("Connection Succsessful")})
 .catch((error)=>{console.log("Recieved an error")});
+
+//todo
