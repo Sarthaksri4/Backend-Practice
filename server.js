@@ -50,7 +50,7 @@ app.use(express.json());
 const todoRoutes = require("./routes/todos");
 
 //mount the todo API routes
-app.use("/api/v1", todoRoutes);
+app.use("/api", todoRoutes);
 
 //start server
 app.listen(PORT, () => {
