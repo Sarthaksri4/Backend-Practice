@@ -13,12 +13,12 @@ const todoSchema=new mongoose.Schema(
     },
     createdAt:{
         type:String,
-        required:false,
+        required:true,
         maxLength:50,
-    },
+    },             
     updatedAt:{
         type:String,
-        required:false,
+        required:true,
         maxLength:50,
     }
 }
